@@ -5,5 +5,8 @@
         margin-bottom: $page-element-spacing;
         width: 900px;
         @include justify-start;
+        img {
+            max-width: 900px;
+        }
     }
 }
