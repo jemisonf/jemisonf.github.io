@@ -2,6 +2,9 @@
 # main css file
 ---
 
+// from https://github.com/mpchadwick/pygments-high-contrast-stylesheets
+@import url(highlight.css);
+
 @import "abstract/variables",
         "abstract/flex";
 
@@ -10,6 +13,7 @@
 
 @import "components/alert",
         "components/box",
+        "components/code_highlight",
         "components/project_card";
 
 @import "layout/footer",

@@ -1,2 +1,5 @@
 collections:
-  - projects
+  projects:
+    output: true
+
+highlighter: rouge
