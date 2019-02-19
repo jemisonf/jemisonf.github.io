@@ -1,0 +1,9 @@
+.item-array {
+    @include flex-row;
+    @include justify-start;
+    flex-wrap: wrap;
+    .array-child {
+        flex-basis: 250px;
+        margin-right: 50px;
+    }
+}

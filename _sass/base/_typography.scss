@@ -1,0 +1,19 @@
+body {
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  color: $main-color;
+  font-family: $header-font-stack;
+}
+
+h1, h2 {
+  font-weight: bold;
+}

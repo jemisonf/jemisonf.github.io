@@ -1,0 +1,25 @@
+---
+layout: default
+title: Fischer Jemison's Homepage
+---
+
+<section class="page-section">
+    <h2>Some Projects</h2>
+    <div class="item-array">
+        {% for project in site.projects %}
+            <div class="project-card array-child">
+                <a href=#>
+                    <h3>
+                        {{ project.name }} <i class="fas fa-arrow-right"></i>
+                    </h3>
+                </a>
+                <p>{{ project.short_description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="page-section box">
+    <h2>About Me</h2>
+    {% include about_me.html %}
+</section>

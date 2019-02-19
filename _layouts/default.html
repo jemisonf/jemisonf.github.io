@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="/css/main.css">
+        {% include cdn_imports.html %}
+    </head>
+    <body>
+        {% include nav.html %}
+        <main class="main-content">
+            {{ content }}
+        </main>
+        {% include footer.html %}
+    </body>
+</html>

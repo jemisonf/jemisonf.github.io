@@ -1,0 +1,11 @@
+.header {
+    background-color: $main-color;
+    color: $background;
+    height: $header-height;
+    @include flex-row;
+    @include justify-center;
+    @include align-center;
+    h1 {
+        color: $background;
+    }
+}

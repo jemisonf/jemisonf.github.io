@@ -1,0 +1,9 @@
+.main-content {
+    @include flex-col;
+    @include align-center;
+    .page-section {
+        margin-bottom: $page-element-spacing;
+        width: 900px;
+        @include justify-start;
+    }
+}

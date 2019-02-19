@@ -1,0 +1,17 @@
+---
+# main css file
+---
+
+@import "abstract/variables",
+        "abstract/flex";
+
+@import "base/reset",
+        "base/typography";
+
+@import "components/box",
+        "components/project_card";
+
+@import "layout/footer",
+        "layout/main",
+        "layout/item_array",
+        "layout/header";

@@ -1,0 +1,7 @@
+.box {
+    border: 4px solid $main-color;
+    box-shadow: 3px 3px 0px $main-color;
+    padding: 20px;
+    @include flex-col;
+    @include align-center;
+}

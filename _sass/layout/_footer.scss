@@ -1,0 +1,8 @@
+.footer {
+    @include flex-row;
+    @include justify-center;
+    @include align-center;
+    .content {
+        max-width: 500px;
+    }
+}
