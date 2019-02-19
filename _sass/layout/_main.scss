@@ -13,3 +13,14 @@
         width: 600px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .main-content {
+        .page-section {
+            width: 90%;
+        }
+        .page-section.narrow {
+            width: auto;
+        }
+    }
+}

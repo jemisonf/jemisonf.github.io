@@ -5,3 +5,10 @@
     @include flex-col;
     @include align-center;
 }
+
+@media screen and (max-width: 900px) {
+    .box {
+        padding: 10px;
+        margin: 0px 30px;
+    }
+}

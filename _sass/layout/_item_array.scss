@@ -8,3 +8,14 @@
         margin-top: 10px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .item-array {
+        max-width:  600px;
+        @include flex-col;
+        @include align-start;
+        .array-child {
+            flex-basis: auto;
+        }
+    }
+}
