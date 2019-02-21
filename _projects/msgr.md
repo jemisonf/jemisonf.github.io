@@ -5,7 +5,7 @@ github: https://github.com/jemisonf/cs340_final_project
 layout: project
 ---
 
-msgr (pronounced "messenger") is an app developed by myself and [Ian Brown](ianbrown9475) for our final project for Introduction to Databases at OSU. It is a web application that allows user to post Twitter-style "messages", comment on "messages" and follow other users. At one time it was hosted on [msgr.fgj.codes](http://msgr.fgj.codes); someday it may appear there again.
+msgr (pronounced "messenger") is an app developed by myself and [Ian Brown](https://github.com/ianbrown9475) for our final project for Introduction to Databases at OSU. It is a web application that allows user to post Twitter-style "messages", comment on "messages" and follow other users. At one time it was hosted on [msgr.fgj.codes](http://msgr.fgj.codes); someday it may appear there again.
 
 Here's a basic overview of the architecture, which is based on the [JAM stack](https://jamstack.org/):
 
