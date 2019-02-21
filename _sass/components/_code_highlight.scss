@@ -1,4 +1,11 @@
 figure.highlight, div.highlight {
     padding: 20px 10px;
     border-radius: 5px;
+    overflow: auto;
+}
+
+code.highlighter-rouge {
+    background-color: #f0f3f3;
+    border-radius: 5px;
+    padding: 2px 5px;
 }
