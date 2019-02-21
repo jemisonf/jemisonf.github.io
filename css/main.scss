@@ -3,7 +3,7 @@
 ---
 
 // from https://github.com/mpchadwick/pygments-high-contrast-stylesheets
-@import url(highlight.css);
+@import "./highlight.css";
 
 @import "abstract/variables",
         "abstract/flex";

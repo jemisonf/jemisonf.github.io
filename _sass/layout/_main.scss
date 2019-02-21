@@ -18,6 +18,9 @@
     .main-content {
         .page-section {
             width: 90%;
+            img {
+                max-width: 100%;
+            }
         }
         .page-section.narrow {
             width: auto;
