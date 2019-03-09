@@ -1,20 +1,27 @@
 $white: #fefefe;
 $off-white: #f0f3f3;
 $black: #0e0e0e;
-$blue: #006eb7;
+$blue: #0176A8;
 $purple: #476CCC;
+$green: #2F9274;
+$light-green: #E4F8F9;
+$light-red: #FFEFF3;
+$dark-red: #D04760;
 
 $background: $white;
 $secondary-bg: $off-white;
 $text-color: $black;
-$main-color: $purple;
-$link-color: $main-color;
+$main-color: $blue;
+$secondary-color: $light-red;
+$secondary-dark: $dark-red;
+$link-color: $text-color;
 
 $font-stack: "Open Sans", sans-serif;
-$header-font-stack: "Raleway", sans-serif;
+$header-font-stack: "Merriweather Sans", sans-serif;
 $code-font-stack: "Roboto Mono", monospace;
+$subtext-font-stack: $code-font-stack;
 $base-font-size: 16px;
 $code-font-size: 14px;
 
-$header-height: 120px;
+$header-height: 50px;
 $page-element-spacing: 40px;

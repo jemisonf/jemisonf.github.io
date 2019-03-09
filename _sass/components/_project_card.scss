@@ -1,5 +1,9 @@
 .project-card {
+    @include offset_background_box;
     p {
         margin: 0;
+    }
+    h3, p {
+        display: inline-block;
     }
 }

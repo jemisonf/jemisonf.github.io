@@ -1,8 +1,9 @@
 blockquote {
-    border-left: 4px solid $main-color;
+    border-left: 4px solid $secondary-dark;
     background: $secondary-bg;
     margin: 0px 40px;
     padding: 4px 8px;
+    font-family: $subtext-font-stack;
     font-style: italic;
     * {
         margin: 0px;

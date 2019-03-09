@@ -6,7 +6,9 @@
 @import "./highlight.css";
 
 @import "abstract/variables",
-        "abstract/flex";
+        "abstract/flex",
+        "abstract/link_utils",
+        "abstract/offset_background_box";
 
 @import "base/reset",
         "base/typography";

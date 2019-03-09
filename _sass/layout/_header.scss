@@ -2,10 +2,14 @@
     background-color: $main-color;
     color: $background;
     height: $header-height;
+    padding: 0px 10px;
     @include flex-row;
-    @include justify-center;
+    // @include justify-center;
     @include align-center;
     h1 {
         color: $background;
+    }
+    a {
+        @include link_reset;
     }
 }

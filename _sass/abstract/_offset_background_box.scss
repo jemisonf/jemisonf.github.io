@@ -1,0 +1,14 @@
+@mixin offset_background_box {
+    z-index: 1;
+    position: relative;
+    &::before {
+        z-index: -1;
+        width: 80%;
+        height: 70%;
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 5px;
+        background-color: $secondary-color;
+    }
+}

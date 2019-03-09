@@ -7,6 +7,8 @@ body {
 a {
   color: $link-color;
   font-weight: 700;
+  text-decoration: none;
+  @include link_underscore;
 }
 
 h1, h2, h3 {
@@ -21,4 +23,10 @@ h1, h2 {
 code {
   font-family: $code-font-stack;
   font-size: $code-font-size;
+}
+
+.subtext {
+  font-family: $subtext-font-stack;
+  font-style: italic;
+  font-size: .9em;
 }

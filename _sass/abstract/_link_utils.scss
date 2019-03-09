@@ -1,0 +1,7 @@
+@mixin link_reset {
+    box-shadow: none;
+}
+
+@mixin link_underscore {
+    box-shadow: inset 0px -4px $secondary-dark;
+}
