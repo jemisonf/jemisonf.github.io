@@ -16,7 +16,14 @@ $secondary-color: $light-red;
 $secondary-dark: $dark-red;
 $link-color: $text-color;
 
-$font-stack: "Open Sans", sans-serif;
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+$font-stack: "system", sans-serif;
 $header-font-stack: "Merriweather Sans", sans-serif;
 $code-font-stack: "Roboto Mono", monospace;
 $subtext-font-stack: $code-font-stack;
@@ -25,3 +32,4 @@ $code-font-size: 14px;
 
 $header-height: 50px;
 $page-element-spacing: 40px;
+$footer-height: 120px;

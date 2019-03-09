@@ -1,0 +1,5 @@
+.col {
+    @include flex-col;
+    @include justify-center;
+    @include align-start;
+}

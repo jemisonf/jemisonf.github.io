@@ -5,6 +5,8 @@ github: https://github.com/jemisonf.github.io
 layout: project
 ---
 
+### Tech
+
 This site was the result of a pretty long process of research and compromise. I originally started making it in fall 2018, with some pretty lofty goals. Here's the extremely optimistic entry I put in my resume for the project:
 
 > Raspberry Pi Web Server, Personal Project (in progress) 
@@ -33,3 +35,37 @@ The final solution ended up being this:
 * Custom code in SASS and Jekyll
 
 This was cool because it was lighter-weight than a React site would've been, it had a good solution for adding custom markdown content, and it was *100% free*. I was skeptical about Jekyll at first, and I found their documentation wasn't great when you were working on a theme from scratch, but after spending some time on the project I'm really happy with how it's gone so far. 
+
+### Design
+
+The design process for this site was really challenging, and part of the reason it took me song to get it up and running was because of the challenges of creating a comprehensive design. I wanted something that:
+
+* Had an edgy, but functional design vision
+* Represented my design voice
+* Could serve as a kind of playground for design ideas I couldn't implement at the library because of OSU brand restrictions
+* Looked nothing like a bootstrap site
+
+One idea I was really fixated on was monospace fonts, which I've been enamored with lately. The original design was all monospace, with a black text on a red background. It was edgy, but not functional; monospace is actually really hard to read in big blocks of text, and bold colored backgrounds were a little *too* edgy. I was also initially working only in HTML and CSS for the design, a process I've since moved away from.
+
+Realizing that this wasn't working, I went back to basics and started trying to build the site in [Figma](https://figma.com), a tool I've used at the library for design prototyping. I worked out some rough initial designs, none of which really resonated with me:
+
+<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FZuZuA5YmWn5N6yxUO0rxM42E%2FHomepage%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+
+While I was struggling with the design process, I started collecting examples of sites I liked. A non exhaustive list is:
+
+* [The Boston Review](http://bostonreview.net/)
+* [Timbuk2](https://www.timbuk2.com/)
+* [vgpena.github.io](https://vgpena.github.io/)
+* [Wired](https://www.wired.com/)
+
+Some features I pulled out from those were:
+
+* Flat designs that don't have an appearance of height
+* Use of monospace (<3) fonts for subtext and emphasis
+* Offset, wonky colored backgrounds
+* Bold use of color
+
+I really liked the 3D text effect that the BR uses for their title text, but I couldn't find a way to work it into the final design. You can see some attempts in the drafts. I struggled a lot with color schemes, going between red, green, and black, and using a purple color for the main site color when I initially built the design. I found [Adobe Color](https://color.adobe.com) to be really helpful in working out color schemes once I started incorporating multiple colors into the design. 
+
+
+This current design was the first time I actually really fell in love with a prototype, although even this needed a lot of tweaking to add enough visual interest to make it seem like a "real" website. I'm still searching for a free sans serif font that I love as much as the typeface [TechTown PDX](https://techtownportland.com/) uses, but Merriweather Sans is a happy medium for me right now. I'm also currently using the [system font stack](https://css-tricks.com/snippets/css/system-font-stack/) for the body font, a decision I'm not 100% set on; it saves me having to hit another CDN though, and I'm trying to keep the site as light as possible.
