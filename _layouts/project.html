@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<section class="page-section">
+<section class="page-section project">
     <div class="row">
-        <h2>{{ page.name }}</h2>
-        <a href="{{ page.github }}" target="_blank"><i class="fab fa-github"></i>   GitHub</a>
+        <h2 class="name">{{ page.name }}</h2>
+        <a class="github-link" href="{{ page.github }}" target="_blank"><i class="fab fa-github"></i>   GitHub</a>
     </div>
     <div class="row">
-        <p class="subtext">{{ page.short_description }}</p>
+        <p class="short-description subtext">{{ page.short_description }}</p>
     </div>
     {{ content }}
 </section>
