@@ -5,7 +5,7 @@ github: https://github.com/jemisonf/web_base
 layout: project
 ---
 
-This was one of the smaller projects I've done, but also one of the more useful ones. It's a pretty simple npm repository that uses `npm-sass` to build a base stylesheet from about 8 Sass files (as of writing), arranged in the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). The idea is to create an extremely-lightweight Bootstrap or Foundation alternative that can be seamlessly built into new projects without adding the overhead of a full CSS framework. 
+This was one of the smaller projects I've done, but also one of the more useful ones. It's a pretty simple npm repository that uses `npm-sass` to build a base stylesheet from about 8 Sass files (as of writing), arranged in the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). The base styles can be built into a new project fairly easily, reducing start-up time and making it easier to build a stylesheet from scratch without using Bootstrap or Foundation.
 
 I originally made the repository after I had to copy a bunch of flexbox styles from a work project into the first iteration of this site. I also noticed I was pretty frequently copying code for other basic styles too, like resetting the margins on `<body>`. The original repository had:
 

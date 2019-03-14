@@ -16,7 +16,7 @@ Here's a basic overview of the architecture, which is based on the [JAM stack](h
 Basically, the app uses three services:
 
 * An api server that serves data to the user, built in Flask
-* A static content server that serves static content, using Nginx
+* A content server that serves static content, using Nginx
 * A mariadb database running on Amazon RDS
 
 
