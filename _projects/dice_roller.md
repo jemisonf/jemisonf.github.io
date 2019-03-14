@@ -5,7 +5,9 @@ github: https://github.com/jemisonf/dice_roller
 layout: project
 ---
 
-Some background: Shadowrun is a cyperpunk pencil-and-paper role playing game, a little like Dungeons and Dragons. It has a lot of differences from D&D though; one that I ran into pretty early is how dice rolls work. In both games, you frequently use a dice rolls to figure out if your character will succeed or fail at an action. In D&D, you roll one die with a specified number of sides, usually 20 sides for an action, add a modifier, and check if you meet a "DC" value, which determines if you succeed. In shadowrun, you have a variably-sized "dice pool" of six sided dice, and you check for success in an action by rolling all of them, and counting the number of 5s and 6s that you rolled (called hits). This is kind of a pain when you have a large dice pool, and because I only own a few six sided dice I ended up using online "dice rollers" that automatically generate your dice pool rolls for you.
+Some background: Shadowrun is a cyperpunk pencil-and-paper role playing game, a little like Dungeons and Dragons. It has a lot of differences from D&D though; one that I ran into pretty early is how dice rolls work. In both games, you frequently use a dice rolls to figure out if your character will succeed or fail at an action. In D&D, you roll one die with a specified number of sides, usually 20 sides for an action, add a modifier, and check if you meet a "DC" value, which determines if you succeed. 
+
+In shadowrun, you have a variably-sized "dice pool" of six sided dice, and you check for success in an action by rolling all of them, and counting the number of 5s and 6s that you rolled (called hits). This is kind of a pain when you have a large dice pool. Because I only own a few six sided dice I ended up using online "dice rollers" that automatically generate your dice pool rolls for you.
 
 The problem with these dice rollers is that a lot of them are really bad; they're either slow, or really badly designed, or both. So I decided to make my own, with three goals:
 

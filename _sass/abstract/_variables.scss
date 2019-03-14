@@ -24,9 +24,9 @@ $link-color: $text-color;
   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
-$font-stack: "system", sans-serif;
+$font-stack: "Proxima Nova", sans-serif;
 $header-font-stack: "Montserrat", sans-serif;
-$code-font-stack: "Roboto Mono", monospace;
+$code-font-stack: monospace;
 $subtext-font-stack: $code-font-stack;
 $base-font-size: 16px;
 $code-font-size: 14px;
