@@ -18,3 +18,5 @@ fields:
       format: markdown
   label: Short Description
   description: A short description of the post shown as a subheader
+pages:
+- _posts/edward-tufte-draft.md
