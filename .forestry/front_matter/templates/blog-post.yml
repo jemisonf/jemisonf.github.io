@@ -19,4 +19,5 @@ fields:
   label: Short Description
   description: A short description of the post shown as a subheader
 pages:
+- _projects/new-relic-spinnaker-monitoring-integration.md
 - _posts/edward-tufte-draft.md
