@@ -1,0 +1,23 @@
+---
+label: Blog post
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: A short title for the post
+- name: short_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Short Description
+  description: A short description of the post shown as a subheader
+pages:
+- _projects/new-relic-spinnaker-monitoring-integration.md
+- _posts/edward-tufte-draft.md
