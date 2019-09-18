@@ -2,27 +2,33 @@
 layout: default
 title: Fischer Jemison's Homepage
 ---
-<!--
-<section class="alert">
-    <p><i class="fa fa-exclamation-circle"></i> This page is currently under construction. Some functionality may be incomplete or non-functional.</p>
-</section>
--->
 <section class="page-section">
+    {% assign num_posts = site.posts | size %}
+    {% if num_posts > 0 %}
+        <h2>Some recent blog posts</h2>
+    {% endif %}
+    {% assign top_three = site.posts | limit: 3 %}
+    {% for post in top_three %}
+        <div class="post-preview">
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="subtext">{{ post.short_description }}</p>
+        </div>
+    {% endfor %}
     <h2>Some Projects</h2>
     <div class="item-array">
         {% for project in site.projects %}
-            <div class="project-card array-child">
-                <div>
-                    <a href="{{ project.url }}">
-                        <h3>
-                            {{ project.name }} <i class="fas fa-arrow-right"></i>
-                        </h3>
-                    </a>
-                </div>
-                <div class="project-card-content"> 
-                    <p class="subtext">{{ project.short_description }}</p>
-                </div>
+        <div class="project-card array-child">
+            <div>
+                <a href="{{ project.url }}">
+                    <h3>
+                        {{ project.title }} <i class="fas fa-arrow-right"></i>
+                    </h3>
+                </a>
             </div>
+            <div class="project-card-content">
+                <p class="subtext">{{ project.short_description }}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
 </section>

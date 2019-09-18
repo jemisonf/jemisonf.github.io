@@ -1,5 +1,5 @@
 ---
-name: Dice Roller
+title: Dice Roller
 short_description: A tool for generating dice pools rolls based on the Shadowrun rules
 github: https://github.com/jemisonf/dice_roller
 layout: project

@@ -2,15 +2,13 @@
 # main css file
 ---
 
-// from https://github.com/mpchadwick/pygments-high-contrast-stylesheets
-@import "./highlight.css";
-
 @import "abstract/variables",
         "abstract/flex",
         "abstract/link_utils",
         "abstract/offset_background_box";
 
-@import "base/reset",
+@import "base/highlight",
+        "base/reset",
         "base/typography";
 
 @import "components/alert",

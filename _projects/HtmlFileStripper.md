@@ -1,5 +1,5 @@
 ---
-name: HtmlFileStripper
+title: HtmlFileStripper
 short_description: a library for stripping tags and characters from HTML files
 github: https://github.com/jemisonf/HtmlFileStripper
 layout: project

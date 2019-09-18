@@ -1,5 +1,5 @@
 ---
-name: fgj.codes
+title: fgj.codes
 short_description: This website!
 github: https://github.com/jemisonf.github.io
 layout: project

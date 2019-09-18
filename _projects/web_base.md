@@ -1,5 +1,5 @@
 ---
-name: Web base
+title: Web base
 short_description: A base set of styles for new web projects
 github: https://github.com/jemisonf/web_base
 layout: project
