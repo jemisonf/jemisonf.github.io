@@ -6,7 +6,7 @@ body {
 
 a {
   color: $link-color;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   @include link_underscore;
 }

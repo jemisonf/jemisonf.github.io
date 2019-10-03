@@ -9,12 +9,18 @@ $light-red: #FFEFF3;
 $dark-red: #ED788D;
 $light-yellow: #FDF3E0;
 
+$lightest-green: #E1F9F3;
+$light-green: #8BF2D9;
+$light-teal: #9CE7EA;
+$light-blue: #EAF3FF;
+$dark-teal: #128186;
+
 $background: $white;
 $secondary-bg: $off-white;
 $text-color: $black;
 $main-color: $blue;
-$secondary-color: $light-yellow;
-$secondary-dark: $dark-red;
+$secondary-color: $lightest-green;
+$secondary-dark: $light-teal;
 $link-color: $text-color;
 
 @font-face {
