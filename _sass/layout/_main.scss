@@ -27,3 +27,9 @@
         }
     }
 }
+
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50px 1fr 110px;
+}
