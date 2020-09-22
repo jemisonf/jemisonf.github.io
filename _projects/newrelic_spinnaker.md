@@ -4,6 +4,9 @@ short_description: An integration between New Relic Insights and Spinnaker
 github: https://github.com/spinnaker/spinnaker-monitoring/pull/217
 layout: project
 ---
+
+_Disclaimer: I developed this project while working at New Relic, but it's not an officially supported New Relic integration. As of August 2020 we no longer use Spinnaker or this integration._
+
 I developed this code while working as an intern on New Relic's Build and Deploy Tools team. Our team at the time was working on adopting Spinnaker as a continuous deployment platform for Kubernetes. As a rule, engineering teams at New Relic use New Relic for monitoring, and tools is not an exception. This posed a problem with Spinnaker, as New Relic is not a first class citizen of basically any metric-related function in Spinnaker.
 
 Our initial solution was to implement the Spinnaker Prometheus integration, and scrape those metrics into New Relic. That worked, but required a lot of additional configuration work on our part. The ideal solution would be a direct integration between the two, which is what I took on.
