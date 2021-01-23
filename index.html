@@ -6,15 +6,21 @@ title: Fischer Jemison's Homepage
     {% assign posts = site.posts | where:"draft","false" %}
     {% assign num_posts = posts | size %}
     {% if num_posts > 0 %}
-        <h2>Some recent blog posts</h2>
+        <h2>Writing and Presentations</h2>
+        {% assign top_three = posts | limit: 3 %}
+        {% for post in top_three %}
+            <div class="post-preview">
+                <h3>
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+                <p class="subtext">{{ post.short_description }}</p>
+            </div>
+        {% endfor %}
     {% endif %}
-    {% assign top_three = posts | limit: 3 %}
-    {% for post in top_three %}
-        <div class="post-preview">
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p class="subtext">{{ post.short_description }}</p>
-        </div>
-    {% endfor %}
+</section>
+<section class="page-section">
     <h2>Some Projects</h2>
     <div class="item-array">
         {% for project in site.projects %}
@@ -34,7 +40,7 @@ title: Fischer Jemison's Homepage
     </div>
 </section>
 
-<section class="page-section narrow">
+<section class="page-section">
     <h2>About Me</h2>
     {% include about_me.html %}
 </section>

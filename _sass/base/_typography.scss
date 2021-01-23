@@ -16,6 +16,10 @@ h1, h2, h3 {
   font-family: $header-font-stack;
 }
 
+h1 a, h2 a, h3 a {
+  color: $main-color;
+}
+
 h1, h2 {
   font-weight: bold;
 }
