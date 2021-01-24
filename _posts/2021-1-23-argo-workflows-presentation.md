@@ -6,7 +6,7 @@ short_description: A short presentation for the Argo Workflows and Events commun
 
 Here's the recording, hosted on Youtube. Our presentation starts at about 32:11.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=dxX_Xnp2sX4&t=220s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dxX_Xnp2sX4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If the embed doesn't work, here's a direct link: [https://www.youtube.com/watch?v=dxX_Xnp2sX4&t=32m11s](https://www.youtube.com/watch?v=dxX_Xnp2sX4&t=32m11s)
 
