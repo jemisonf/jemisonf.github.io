@@ -8,12 +8,19 @@
         img {
             max-width: 900px;
         }
-        h2 {
-            margin-left: -20px;
-        }
     }
     .page-section.narrow {
         width: 600px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .main-content {
+        .page-section {
+            h2 {
+            margin-left: -20px;
+            }
+        }
     }
 }
 
