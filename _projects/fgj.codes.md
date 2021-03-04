@@ -3,6 +3,7 @@ title: fgj.codes
 short_description: This website!
 github: https://github.com/jemisonf/jemisonf.github.io
 layout: project
+draft: true
 ---
 
 ### Tech
