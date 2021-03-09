@@ -13,7 +13,6 @@ The problem with these dice rollers is that a lot of them are really bad; they'r
 3. Be fast and lightweight
 2. Be mobile and desktop friendly.
 
-1 and 2 were top priorities, and 3 was a stretch goal. You can see the result [here](https://fgj.codes/dice_roller). 1 and 2 definitely succeeded; the site scores a 100 on a Lighthouse performance audit, and the visible elements have been reduced to the bare essentials. 3 is mostly true; the site is usable on mobile, but the controls for selecting number of dice are a work in progress. I'm also proud to say that the site shows up on the first page of google when you search ["Shadowrun dice roller"](http://lmgtfy.com/?q=shadowrun+dice+roller). Here's a screenshot of the app:
+1 and 2 were top priorities, and 3 was a stretch goal. You can see the result [here](https://fgj.codes/dice_roller). 1 and 2 definitely succeeded; the site scores a 100 on a Lighthouse performance audit, and the visible elements have been reduced to the bare essentials. 3 is mostly true; the site is usable on mobile, but the controls for selecting number of dice are a work in progress. I'm also proud to say that the site shows up on the first page of google when you search ["Shadowrun dice roller"](http://lmgtfy.com/?q=shadowrun+dice+roller). Here's the app:
 
-
-![Shadowrun dice roller screenshot](/assets/shadowrun-dice-roller.png)
+<iframe src="https://fgj.codes/dice_roller" width="100%" height="600px">
