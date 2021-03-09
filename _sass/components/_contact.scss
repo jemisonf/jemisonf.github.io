@@ -4,4 +4,8 @@
     .contact {
         margin: 0px 5px;
     }
+    a::before {
+        content: "";
+    }
+    
 }

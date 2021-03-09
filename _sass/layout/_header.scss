@@ -9,4 +9,7 @@
         @include link_reset;
         color: $background;
     }
+    a::before {
+        content: ""
+    }
 }
