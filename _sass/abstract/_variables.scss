@@ -10,7 +10,7 @@ $dark-red: #FFB3C2;
 $light-yellow: #fff9f0;
 $darker-yellow: #ffecda;
 
-$background: $light-yellow;
+$background: $white;
 $secondary-bg: $white;
 $text-color: $black;
 $main-color: $blue;
@@ -28,7 +28,7 @@ $link-color: $text-color;
 $font-stack: "Lato", sans-serif;
 $header-font-stack: "Montserrat", sans-serif;
 $code-font-stack: monospace;
-$subtext-font-stack: $code-font-stack;
+$subtext-font-stack: $font-stack;
 $base-font-size: 16px;
 $code-font-size: 14px;
 

@@ -26,11 +26,11 @@ title: Fischer Jemison's Homepage
         {% for project in site.projects %}
         <div class="project-card array-child">
             <div>
-                <a href="{{ project.url }}">
-                    <h3>
-                        {{ project.title }} <i class="fas fa-arrow-right"></i>
-                    </h3>
-                </a>
+                <h3>
+                    <a href="{{ project.url }}">
+                        {{ project.title }}
+                    </a>
+                </h3>
             </div>
             <div class="project-card-content">
                 <p class="subtext">{{ project.short_description }}</p>

@@ -8,15 +8,29 @@ a {
   color: $link-color;
   font-weight: 700;
   text-decoration: none;
-  @include link_underscore;
 }
 
-h1, h2, h3 {
+a::after {
+  content: "►";
+  margin-right: 0.1rem;
+  color: $green;
+  font-size: 0.5rem;
+  position: relative;
+  left: 0.1rem;
+  bottom: -0.2rem;
+}
+
+h1, h2 {
   color: $main-color;
   font-family: $header-font-stack;
 }
 
-h1 a, h2 a, h3 a {
+h3, h3 a {
+  font-family: $header-font-stack;
+  font-weight: 500;
+}
+
+h2 a {
   color: $main-color;
 }
 
