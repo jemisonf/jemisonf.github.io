@@ -3,6 +3,7 @@ title: mdrender
 short_description: A C++ library for rendering markdown to HTML
 github: https://github.com/jemisonf/mdrender
 layout: project
+published: false
 ---
 
 Mdrender was developed as part of OSU's Software Engineering I class in cooperation with [Sean Gillen](https://github.com/gillens) and [Sonica Gupta](https://github.com/guptaso). Inspired by my struggles with writing markdown documentation and not being able to preview its output, I wanted to build a software library that could render markdown files locally to html. Our deliverables were the library itself, as well as a command-line application that used the library. The application is used as follows:
