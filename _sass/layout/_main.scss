@@ -3,8 +3,7 @@
     @include align-center;
     .page-section {
         margin-bottom: $page-element-spacing;
-        width: 900px;
-        @include justify-start;
+        max-width: 300px;
         img {
             max-width: 900px;
         }
@@ -15,21 +14,24 @@
             max-width: 600px;
         }
     }
-    .page-section.narrow {
-        width: 600px;
+}
+
+@media screen and (min-width: 700px) {
+    .main-content .page-section {
+        max-width: 900px;
+
+        &.narrow {
+            max-width: 600px;
+        }
     }
 }
 
 @media screen and (max-width: 900px) {
     .main-content {
         .page-section {
-            width: 90%;
             img {
                 max-width: 100%;
             }
-        }
-        .page-section.narrow {
-            width: 90%;
         }
     }
 }
