@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Faster, Smaller, and More Secure Docker Builds
-short_description: A few steps to save you some docker pain
-draft: true
+short_description: Some simple steps for improved Docker builds
 ---
 
-For this post, I'd like to walk through some common pain points with Docker builds and how to address them. We're going to use an example application found on GitHub at [jemisonf/docker_builds](https://github.com/jemisonf/docker_builds/) to show each step along the way. For the final version, check out the `master` branch of the repo, or start with the `start-here` tag to follow along with the post.
+For this post, I'd like to highlight some Docker features and techniques that are useful but often left out of entry level tutorials, or that you may have missed if you learned Docker more than a couple years ago and haven't closely followed the latest releases. I'm using Docker Desktop 20.10.8 in this post but as long as you're within a couple major versions of that I wouldn't expect any compatibility issues.
+
+I created an example application that we're going to use to test out the steps; you can find it on GitHub at [jemisonf/docker_builds](https://github.com/jemisonf/docker_builds/). For the final version, check out the `master` branch of the repo, or start with the `start-here` tag to follow along with the post.
 
 _Note: this post uses a Go app as an example, but should be applicable to non-Go apps as well. If you're familiar with Docker but not Go, you can just skip over the Go-specific parts._
 
@@ -88,7 +89,7 @@ If we run `docker build .` again, we should get about the same build time. This 
 
     **Requires**: the artifact from step 2.
 
-When you build a Docker image, each line in your `Dockerfile` is broken out into a "layer". Docker understands which files (either inside in the Docker image or in your file system) are required to create the layer, and will use a cached version of the layer if no changes are detected in those files from the previous build.
+When you build a Docker image, each line in your `Dockerfile` is broken out into a "layer". Docker understands which files (either inside in the Docker image or in your file system) are required to create the layer, and will use a cached version of the layer if no changes are detected in those files from the previous build. You can [read more about layers here](https://docs.docker.com/storage/storagedriver/).
 
 We can take advantage of this behavior in order to cache our dependencies and save that time in each repeated build. This is not possible in our current approach because we're copying all of the code in our repo at once, and then running `go build`, which combines downloading dependencies and building application code into one command. 
 
@@ -109,7 +110,7 @@ RUN go build .
 CMD ./docker_builds
 ```
 
-This pattern is not specific to go. In a node app, it would look like:
+This pattern is not specific to Go. In a node app, it would look like:
 
 ```Dockerfile
 FROM node:16
@@ -125,9 +126,9 @@ COPY . ./
 # build your app ...
 ```
 
-This pattern should work for most apps, regardless of language: copy your dependency files, download your dependencies, then copy your application files and build your application.
+This should work for most apps, regardless of language: copy your dependency files, download your dependencies, then copy your application files and build your application.
 
-In fact, we can generalize that pattern even further: place the commands in your Dockerfile in order from least likely to change to most likely to change. For example, if you had to install a system dependency first via a package manager, you'd do that before copying any of your dependency files or application code.
+An even more general way to put this is: place the commands in your Dockerfile in order from least likely to change to most likely to change. For example, if you had to install a system dependency first via a package manager, you'd do that before copying any of your dependency files or application code.
 
 If we try running `docker image ls`, we'll see another potential problem:
 
@@ -152,18 +153,21 @@ FROM golang:1.16 AS builder
 
 WORKDIR /app
 
+COPY go.mod go.sum .
+
+RUN go mod download
+
 COPY . ./
 
-RUN go build .
+RUN go build . 
 
-CMD ./server
 FROM gcr.io/distroless/base
 
 WORKDIR /app
 
 COPY --from=builder /app/docker_builds .
 
-CMD ["/app/docker_builds"] 
+CMD ["/app/docker_builds"]
 ```
 
 Now if we run `docker image ls`, we should see our latest image, with a much smaller size of 46 MB:
@@ -183,15 +187,14 @@ Now we have a secure, minimal image that's quick to build locally. We can set up
 
 I'd also recommend changing the default tag to push two tags, one for the commit SHA and one `latest` tag. For my repo that looks like:
 ```yaml
-      -
-        name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-        with:
-          push: true
-          # if forking, replace `jemisonf` with your docker hub username
-          tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
+-  name: Build and push
+   id: docker_build
+   uses: docker/build-push-action@v2
+   with:
+   with:
+       push: true
+       # if forking, replace `jemisonf` with your docker hub username
+       tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
 ```
 
 Pushing only `latest` can be OK for sample projects, but it's generally a bad idea for production applications. Using the SHA for the commit you're building means you can precisely associate Docker builds with each release of your application.
@@ -201,20 +204,27 @@ If you push this to your GitHub repo, let it build, and then re-run the action, 
 We can solve this problem using Docker [external caches](https://docs.docker.com/engine/reference/commandline/build/#specifying-external-cache-sources). With external caches, we can pull the cached layers of a previous image from the Docker registry during our Docker build, letting us re-use caches in between builds. This is easy to configure in GitHub actions using the `cache-from` and `cache-to` options in our build and push step:
 
 ```yaml
-        with:
-          push: true
-          # if forking, replace `jemisonf` with your docker hub username
-          tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
-          cache-from: type=registry,ref=jemisonf/docker_builds:latest
-          cache-to: type=inline
+with:
+    push: true
+    # if forking, replace `jemisonf` with your docker hub username
+    tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
+    cache-from: type=registry,ref=jemisonf/docker_builds:latest
+    cache-to: type=inline
 ```
 
 See the [cache docs](https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md) for the Action for more details.
 
 If we push this change, let the build complete, and then trigger a rebuild for the same commit we should see the Docker build complete almost instantly because it's re-using the previous build's cache. Future builds should be able to take advantage of the caching behavior we saw locally to minimize the amount of steps in the build.
 
-Note that because this step requires downloading layers from a remote repository, it's possible it won't save time in every case if it's slower to download those layers than to download your application dependencies. I would expect this to be worthwhile for the average project, but it's worth evaluating on an individual basis if your project actually benefits from it before using it.
+_Note: because this step requires downloading layers from a remote repository, it's possible it won't save time in every case if it's slower to download those layers than to download your application dependencies. I would expect this to be worthwhile for the average project, but it's worth evaluating on an individual basis if your project actually benefits from it before using it._
 
 ## Wrap-up
 
+A short summary of the suggestions in this post:
+* You can make your Docker builds more cache-friendly by copying your dependency files and installing dependencies before copying your application files and building your application.
+* In general, Docker can cache your build more easily if you run your Dockerfile commands in order of least likely to change to most likely to change
+* You can make your output builds smaller and more secure using [multi-stage builds]() and a [distroless base image](https://github.com/GoogleContainerTools/distroless). Other alternatives are using Alpine Linux or `scratch` as your base image
+* You can speed up CI builds by sharing your Docker build cache between builds using [external cache sources](https://docs.docker.com/engine/reference/commandline/build/#specifying-external-cache-sources), which you can enable using the [cache settings](https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md) in the Docker build and push GitHub Action
+
 That's it! The steps in this post should be applicable to most projects using Docker for builds, and should help ensure that your Docker images are small, fast to build, and secure. I've tried to link documentation and relevent resources wherever possible, and I'd strongly recommend reading those as well; this post is intended as an introduction to each of concepts mentioned and I'll defer to linked resources to provide the depth that's missing here.
+
